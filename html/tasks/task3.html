@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochalina</title>
+  <link rel="stylesheet" href="../../css/main.css" />
+</head>
+
+<body>
+  <nav class="navigation">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a href="../index.html" class="navigation__link">Главная</a>
+      </li>
+      <li class="navigation__item">
+        <a href="task1.html" class="navigation__link" >Калькулятор</a>
+      </li>
+      <li class="navigation__item">
+        <a href="task2.html" class="navigation__link">Слайдер</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#" class="navigation__link" style="text-shadow: 0 0 20px #205038; cursor: default;">Корзина</a>
+      </li>
+      <li class="navigation__item">
+        <a href="task4.html" class="navigation__link">Эллипс</a>
+      </li>
+      <li class="navigation__item">
+        <a href="task5.html" class="navigation__link">Года</a>
+      </li>
+      <li class="navigation__item">
+        <a href="task6.html" class="navigation__link">Тест</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="main">
+    <div class="container">
+      <div class="products">
+        <div class="product">
+          <img src="../../images/strawberry.png" alt="" class="product__pic">
+          <h3 class="product__title">Клубника</h3>
+          <p class="price">100</p>
+          <input type="number" class="product__quantity" value="1" min="0" id="str">
+          <button class="add-to-cart">В корзину</button>
+        </div>
+        <div class="product">
+          <img src="../../images/lime.png" alt="" class="product__pic">
+          <h3 class="product__title">Лайм</h3>
+          <p class="price">100</p>
+          <input type="number" class="product__quantity" value="1" min="0" id="li">
+          <button class="add-to-cart">В корзину</button>
+        </div>
+        <div class="product">
+          <img src="../../images/orange.png" alt="" class="product__pic">
+          <h3 class="product__title">Апельсин</h3>
+          <p class="price">100</p>
+          <input type="number" class="product__quantity" value="1" min="0" id="org">
+          <button class="add-to-cart">В корзину</button>
+        </div>
+        <div class="product">
+          <img src="../../images/cherry.png" alt="" class="product__pic">
+          <h3 class="product__title">Вишня</h3>
+          <p class="price">100</p>
+          <input type="number" class="product__quantity" value="1" min="0" id="ch">
+          <button class="add-to-cart">В корзину</button>
+        </div>
+      </div>
+      <div class="cart-icon">
+        <img src="../../images/cart.png" alt="Корзина" class="cart__image">
+      </div>
+      <div class="cart-popup">
+        <div class="cart-items">
+          <h3 class="cart-title">Корзина</h3>
+          <div class="total">
+            <span>Итого:</span>
+            <span class="total-price">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../../js/shopping-cart.js"></script>
+</body>
+
+</html>

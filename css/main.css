@@ -1,0 +1,791 @@
+html {
+  font-size: 20px;
+  font-family: "Alegreya Sans", Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #e7e7e7;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  position: relative;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* общее */
+.main {
+  width: 85%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__column {
+  flex-direction: column;
+}
+
+.main__pic {
+  width: 30%;
+  margin-right: 3%;
+}
+
+.img {
+  width: 100%;
+  box-shadow: 20px #000;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.link {
+  color: #205038;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-shadow: 0 0 20px #205038;
+}
+
+.btn {
+  background-color: #e7e7e7;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 5px;
+  line-height: 1;
+  text-decoration: none;
+  color: #205038;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* navigation */
+
+.navigation {
+  padding: 1px;
+  background: #cdcdcd;
+  border-bottom: 4px solid #2e7250;
+  color: #205038;
+  font-weight: 500;
+}
+
+.navigation__list {
+  width: 85%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__link:hover {
+  text-shadow: 0 0 20px #205038;
+}
+
+/* калькулятор */
+.calc {
+  max-width: 400px;
+  margin: 10vh auto 0 auto;
+  box-shadow: 0px 0px 43px 17px rgba(153, 153, 153, 1);
+}
+
+#calc__display {
+  text-align: right;
+  height: 70px;
+  line-height: 70px;
+  padding: 16px 8px;
+  font-size: 25px;
+  border: 1px solid#999;
+}
+
+.calc__buttons {
+  display: grid;
+  border-bottom: 1px solid #999;
+  border-left: 1px solid#999;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.calc__buttons>div {
+  border-top: 1px solid #999;
+  border-right: 1px solid#999;
+}
+
+.calc__button {
+  border: 0.5px solid #999;
+  line-height: 100px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#equal {
+  background-color: rgb(85, 85, 255);
+  color: white;
+}
+
+.calc__button:hover {
+  background-color: #323330;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+/* слайдер */
+.itc-slider {
+  position: relative;
+  margin-top: 20px;
+}
+
+.itc-slider__wrapper {
+  overflow: hidden;
+}
+
+.itc-slider__items {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.itc-slider__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 7rem;
+}
+
+.itc-slider__img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.itc-slider__item:nth-child(1) {
+  background-color: #f44336;
+}
+
+.itc-slider__item:nth-child(2) {
+  background-color: #9c27b0;
+}
+
+.itc-slider__item:nth-child(3) {
+  background-color: #3f51b5;
+}
+
+.itc-slider__item:nth-child(4) {
+  background-color: #03a9f4;
+}
+
+.itc-slider__item:nth-child(5) {
+  background-color: #4caf50;
+}
+
+/* кнопки */
+.itc-slider__btn {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  background: rgb(0 0 0 / 20%);
+  border: none;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.itc-slider__btn:hover,
+.itc-slider__btn:focus {
+  color: #fff;
+  text-decoration: none;
+  background: rgb(0 0 0 / 30%);
+  outline: 0;
+}
+
+.itc-slider__btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.itc-slider__btn-prev::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.itc-slider__btn-next::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.itc-slider__btn-prev {
+  left: 0;
+}
+
+.itc-slider__btn-next {
+  right: 0;
+}
+
+/* индикатор */
+.itc-slider__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  margin: 0 15%;
+  padding-left: 0;
+  list-style: none;
+}
+
+.itc-slider__indicator {
+  flex: 0 1 auto;
+  box-sizing: content-box;
+  width: 30px;
+  height: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  background-color: rgb(255 255 255 / 50%);
+  background-clip: padding-box;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  cursor: pointer;
+}
+
+.itc-slider__indicator-active {
+  background-color: rgb(255 255 255 / 90%);
+}
+
+/* корзина */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.products {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  width: 180px;
+  padding: 10px;
+  /* border: 2px solid #205038; */
+  box-shadow: 0 0 6px #8a8a8a;
+  border-radius: 5px;
+}
+
+.product__pic {
+  width: 100%;
+  height: 180px;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.product__title {
+  /* display: inline-block; */
+  font-size: 26px;
+  font-weight: 500;
+  /* margin-right: 7px; */
+  color: #2e7250;
+}
+
+.product__quantity {
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 34px;
+  font-weight: 600;
+  /* margin-right: 7px; */
+  color: #205038;
+}
+
+.price::after {
+  content: "руб/кг";
+  margin-left: 5px;
+  font-size: 24px;
+  font-weight: 600;
+  /* margin-right: 7px; */
+  color: #205038;
+}
+
+.total-price::after {
+  content: "руб";
+  margin-left: 5px;
+}
+
+.add-to-cart {
+  cursor: pointer;
+  width: 100%;
+  padding: 2px 5px;
+  background-color: #2e7250;
+  border: 1px solid #205038;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #153324;
+  color: #fff;
+  font-size: 24px;
+}
+
+.add-to-cart:hover {
+  background-color: #205038;
+}
+
+.cart-icon {
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #2e7250;
+  border: 4px solid #205038;
+  -webkit-transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -o-object-fit: contain;
+  object-fit: contain;
+  padding: 15px;
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-icon:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.cart__image {
+  height: 100%;
+}
+
+.cart-popup {
+  position: fixed;
+  top: 95px;
+  right: 95px;
+  background-color: #fff;
+  z-index: 10;
+  display: none;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #8a8a8a;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.cart-title {
+  font-size: 30px;
+  border-bottom: 1px solid #205038;
+  padding-bottom: 5px;
+}
+
+.item {
+  display: flex;
+  gap: 5px;
+}
+
+.item .flex {
+  justify-content: space-between;
+}
+
+
+
+/* Японские года */
+
+.year {
+  margin-bottom: 20px;
+}
+
+.year__btn {
+  margin-bottom: 20px;
+}
+
+.year__pic {
+  color: black;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+/* Эллипс */
+
+.ellipse {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#canvas {
+  border: 1px solid gray;
+}
+
+/* lkz 'kbgcf */
+
+#ellipse {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 50px auto;
+}
+
+#dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* тест */
+
+.game-quiz-container{
+  width: 40rem;
+  height: 30rem;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.game-details-container{
+  width: 80%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-details-container h1{
+  font-size: 1.2rem;
+}
+
+.game-question-container{
+  width: 80%;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid darkgray;
+  border-radius: 25px;
+}
+
+.game-question-container h1{
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3px;
+}
+
+.game-options-container{
+  width: 80%;
+  margin-bottom: 15px;
+  height: 12rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.game-options-container span{
+  width: 45%;
+  height: 3rem;
+  border: 2px solid darkgray;
+  border-radius: 20px;
+  overflow: hidden;
+}
+span label{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-weight: 600;
+  color: rgb(22, 22, 22);
+}
+
+span label:hover{
+  -ms-transform: scale(1.12);
+  -webkit-transform: scale(1.12);
+  transform: scale(1.12);
+  color: white;
+}
+
+input[type="radio"] {
+  position: relative;
+  display: none;
+}
+
+
+input[type=radio]:checked ~ .option {
+  background: paleturquoise;
+}
+
+.next-button-container{
+  width: 50%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.next-button-container button{
+  width: 8rem;
+  height: 2rem;
+  border-radius: 10px;
+  background: none;
+  color: rgb(25, 25, 25);
+  font-weight: 600;
+  border: 2px solid gray;
+  cursor: pointer;
+  outline: none;
+}
+.next-button-container button:hover{
+  background-color: rgb(143, 93, 93);
+}
+
+.modal-container{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  -webkit-animation: fadeIn 1.2s ease-in-out;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.modal-content-container{
+  height: 20rem;
+  width: 25rem;
+  background-color: rgb(43, 42, 42);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 25px;
+}
+
+.modal-content-container h1{
+  font-size: 1.3rem;
+  height: 3rem;
+  color: lightgray;
+  text-align: center;
+}
+
+.grade-details{
+  width: 15rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grade-details p{
+  color: white;
+  text-align: center;
+}
+
+.modal-button-container{
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-button-container button{
+  width: 10rem;
+  height: 2rem;
+  background: none;
+  outline: none;
+  border: 1px solid rgb(252, 242, 241);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.modal-button-container button:hover{
+  background-color: rgb(83, 82, 82);
+}
+
+@media(min-width : 300px) and (max-width : 350px){
+  .game-quiz-container{
+      width: 90%;
+      height: 80vh;
+   }
+   .game-details-container h1{
+      font-size: 0.8rem;
+   }
+
+   .game-question-container{
+      height: 6rem;
+   }
+   .game-question-container h1{
+     font-size: 0.9rem;
+  }
+
+  .game-options-container span{
+      width: 90%;
+      height: 2.5rem;
+  }
+  .game-options-container span label{
+      font-size: 0.8rem;
+  }
+  .modal-content-container{
+      width: 90%;
+      height: 25rem;
+  }
+
+  .modal-content-container h1{
+      font-size: 1.2rem;
+  }
+}
+
+@media(min-width : 350px) and (max-width : 700px){
+ .game-quiz-container{
+     width: 90%;
+     height: 80vh;
+  }
+  .game-details-container h1{
+      font-size: 1rem;
+  }
+
+  .game-question-container{
+      height: 8rem;
+  }
+
+  .game-question-container h1{
+      font-size: 0.9rem;
+   }
+
+  .game-options-container span{
+      width: 90%;
+  }
+  .modal-content-container{
+      width: 90%;
+      height: 25rem;
+  }
+  .modal-content-container h1{
+      font-size: 1.2rem;
+  }
+}
+
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
