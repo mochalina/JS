@@ -27,7 +27,7 @@ const questions = [
   },
 
   {
-      question: "Сколько дней",
+      question: "Сколько часов в дне",
       optionA: "30 часов",
       optionB: "38 часов",
       optionC: "48 часов",
